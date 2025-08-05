@@ -29,6 +29,14 @@ interface Product {
     };
     brand: string;
     createdAt: string;
+    specifications?: {
+        volume?: string;
+        ingredients?: string[];
+        skinType?: string;
+        hairType?: string;
+        suitableFor?: string;
+        fragrance?: string;
+    };
 }
 
 const Wishlist = () => {
@@ -145,6 +153,7 @@ const Wishlist = () => {
                                                 rating={product.ratings.average}
                                                 reviews={product.ratings.numOfReviews}
                                                 category={product.category.name}
+                                                volume={product.specifications?.volume}
                                                 isSale={!!(product.originalPrice && product.originalPrice > product.price)}
                                                 isNew={isNew}
                                             />
