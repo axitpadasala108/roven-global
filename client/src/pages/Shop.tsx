@@ -21,6 +21,14 @@ interface Product {
   ratings: { average: number; numOfReviews: number; };
   category: { _id: string; name: string; };
   brand: string; createdAt: string;
+  specifications?: {
+    volume?: string;
+    ingredients?: string[];
+    skinType?: string;
+    hairType?: string;
+    suitableFor?: string;
+    fragrance?: string;
+  };
 }
 
 interface Category {
@@ -318,7 +326,7 @@ const Shop = () => {
                     const thirtyDaysAgo = new Date();
                     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
                     const isNew = new Date(product.createdAt) > thirtyDaysAgo;
-                    return <ProductCard key={product._id} id={product._id} slug={product.slug} name={product.name} price={product.price} originalPrice={product.originalPrice} image={product.images[0]?.url || ''} rating={product.ratings.average} reviews={product.ratings.numOfReviews} category={product.category.name} isSale={!!(product.originalPrice && product.originalPrice > product.price)} isNew={isNew} />;
+                    return <ProductCard key={product._id} id={product._id} slug={product.slug} name={product.name} price={product.price} originalPrice={product.originalPrice} image={product.images[0]?.url || ''} rating={product.ratings.average} reviews={product.ratings.numOfReviews} category={product.category.name} volume={product.specifications?.volume} isSale={!!(product.originalPrice && product.originalPrice > product.price)} isNew={isNew} />;
                   })}
                 </div>
               )}
