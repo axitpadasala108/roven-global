@@ -160,6 +160,7 @@ const SearchDropdown: React.FC<SearchDropdownProps> = ({ open, onClose }) => {
                               rating={prod.ratings?.average || 0}
                               reviews={prod.ratings?.numOfReviews || 0}
                               category={prod.category?.name || ''}
+                              volume={prod.specifications?.volume}
                               isNew={prod.isNew}
                               isSale={prod.isSale}
                             />

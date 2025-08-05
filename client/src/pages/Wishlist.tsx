@@ -145,6 +145,7 @@ const Wishlist = () => {
                                                 rating={product.ratings.average}
                                                 reviews={product.ratings.numOfReviews}
                                                 category={product.category.name}
+                                                volume={product.specifications?.volume}
                                                 isSale={!!(product.originalPrice && product.originalPrice > product.price)}
                                                 isNew={isNew}
                                             />

@@ -130,6 +130,7 @@ const CategoryProductsPage = () => {
                       rating={product.ratings ? product.ratings.average : 0}
                       reviews={product.ratings ? product.ratings.numOfReviews : 0}
                       category={product.category ? product.category.name : ''}
+                      volume={product.specifications?.volume}
                       isSale={!!(product.originalPrice && product.originalPrice > product.price)}
                       isNew={isNew}
                     />
