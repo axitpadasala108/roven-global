@@ -20,6 +20,7 @@ interface ProductCardProps {
     rating: number;
     reviews: number;
     category: string;
+    volume?: string;
     isNew?: boolean;
     isSale?: boolean;
 }
@@ -34,6 +35,7 @@ const ProductCard = ({
     rating,
     reviews,
     category,
+    volume,
     isNew,
     isSale,
 }: ProductCardProps) => {
@@ -122,6 +124,9 @@ const ProductCard = ({
 
                 <CardContent className="p-4 flex flex-col flex-grow">
                     <div className="text-sm text-muted-foreground mb-1">{category}</div>
+                    {volume && (
+                        <div className="text-xs text-primary/70 font-medium mb-1">{volume}</div>
+                    )}
                     <h3 className="font-medium text-foreground mb-2 line-clamp-2 flex-grow">{name}</h3>
 
                     <div className="flex items-center gap-1 mb-3">
